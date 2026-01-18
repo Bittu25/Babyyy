@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Will You Forgive Me?</title>
+
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f9e3e3;
+        font-family: Arial, sans-serif;
+        overflow: hidden;
+    }
+
+    .container {
+        text-align: center;
+        position: relative;
+    }
+
+    h1 {
+        font-size: 2.5em;
+        color: #d32f2f;
+    }
+
+    .buttons {
+        margin-top: 20px;
+        position: relative;
+        height: 80px;
+    }
+
+    button {
+        font-size: 1.4em;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .yes-button {
+        background-color: #4caf50;
+        color: white;
+        margin-right: 10px;
+    }
+
+    .no-button {
+        background-color: #f44336;
+        color: white;
+        position: absolute;
+    }
+
+    .gif_container img {
+        max-width: 480px;
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        margin-top: 20px;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container" id="mainContent">
+    <h1>Will you forgive me?</h1>
+
+    <div class="buttons">
+        <button class="yes-button" onclick="handleYesClick()">Yes</button>
+        <button class="no-button" id="noBtn">No</button>
+    </div>
+
+    <div class="gif_container">
+        <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbW5lenZyZHI5OXM2eW95b3pmMG40cWVrMDhtNjVuM3A4dGNxa2g2dSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/VM1fcpu2bKs1e2Kdbj/giphy.gif">
+    </div>
+</div>
+
+<script>
+    const noBtn = document.getElementById("noBtn");
+
+    noBtn.addEventListener("mouseover", moveButton);
+    noBtn.addEventListener("click", moveButton);
+
+    function moveButton() {
+        const x = Math.random() * (window.innerWidth - 150);
+        const y = Math.random() * (window.innerHeight - 150);
+
+        noBtn.style.left = x + "px";
+        noBtn.style.top = y + "px";
+    }
+
+    function handleYesClick() {
+        document.getElementById("mainContent").innerHTML = `
+            <h1 style="font-size:3em;">Knew you would say yes! 🥰❤️</h1>
+            <div class="gif_container">
+                <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMmo3c3l5ODh3ZGN6NHhhaDE2Mjg1ZjkwOXczdDFxbWM3dTBtaW9zaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/9XY4f3FgFTT4QlaYqa/giphy.gif">
+            </div>
+        `;
+    }
+</script>
+
+</body>
+</html>
